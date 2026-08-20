@@ -1,0 +1,16 @@
+{
+  "name": "prepmate",
+  "version": "1.0.0",
+  "description": "AI Interview Prep Platform - Full Stack MERN Application",
+  "private": true,
+  "scripts": {
+    "setup": "cd server && npm install && cd ../client && npm install",
+    "start": "cd server && npm start",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "test:server": "cd server && npm test"
+  },
+  "keywords": ["mern", "ai", "interview-prep", "react", "express", "mongodb"],
+  "author": "PrepMate",
+  "license": "ISC"
+}
