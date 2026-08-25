@@ -36,6 +36,25 @@ describe('Interview Question Generation API', () => {
     expect(res.body.session.skillAnalysis).toHaveProperty('missingSkills');
   });
 
+  it('should detect Relational Schema Design (PK/FK) and SQL JOINs skills in job description', async () => {
+    const payload = {
+      jobDescription: 'Seeking Database Architect with expertise in Relational Schema Design, Primary Key and Foreign Key modeling, PK/FK constraints, and optimized SQL JOINs (INNER, LEFT, RIGHT).',
+      resumeText: 'Software Developer experienced in PostgreSQL, Relational Schema Design with PK/FK constraints, database normalization, and complex SQL JOINs.',
+      targetRole: 'Database Architect',
+    };
+
+    const res = await request(app)
+      .post('/api/interviews/generate-questions')
+      .set('Authorization', `Bearer ${authToken}`)
+      .send(payload);
+
+    expect(res.statusCode).toEqual(201);
+    expect(res.body.success).toBe(true);
+    expect(res.body.session.skillAnalysis.overlappingSkills.length).toBeGreaterThan(0);
+    const questions = res.body.session.questions;
+    expect(questions.some(q => q.category.includes('Relational Schema') || q.category.includes('SQL JOINs'))).toBe(true);
+  });
+
   it('should reject question generation when job description is too short', async () => {
     const res = await request(app)
       .post('/api/interviews/generate-questions')

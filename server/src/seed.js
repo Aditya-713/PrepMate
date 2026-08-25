@@ -18,12 +18,12 @@ const ROLES = [
 
 const SKILL_SETS = [
   ['JavaScript', 'TypeScript', 'React', 'Redux', 'HTML5', 'CSS3', 'Tailwind', 'Webpack', 'Jest'],
-  ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Redis', 'Docker', 'REST APIs', 'GraphQL', 'Microservices'],
-  ['React', 'Node.js', 'Python', 'PostgreSQL', 'Docker', 'AWS', 'System Design', 'Git', 'CI/CD'],
+  ['Node.js', 'Express', 'Relational Schema Design (PK/FK)', 'SQL JOINs', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'REST APIs'],
+  ['React', 'Node.js', 'Python', 'PostgreSQL', 'SQL JOINs', 'Docker', 'AWS', 'System Design', 'Git', 'CI/CD'],
   ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'CI/CD', 'Linux', 'Bash', 'Prometheus', 'Grafana'],
   ['Python', 'PyTorch', 'TensorFlow', 'Scikit-Learn', 'FastAPI', 'NLP', 'Vector DBs', 'LLMs', 'Pandas'],
   ['React Native', 'Flutter', 'Dart', 'iOS/Android', 'Redux', 'Mobile UI', 'GraphQL', 'Firebase'],
-  ['Distributed Systems', 'System Design', 'Kafka', 'Kubernetes', 'Microservices', 'Database Sharding', 'AWS'],
+  ['Distributed Systems', 'System Design', 'Relational Schema Design (PK/FK)', 'SQL JOINs', 'Kafka', 'Kubernetes', 'Microservices'],
   ['Selenium', 'Cypress', 'Playwright', 'Jest', 'Postman', 'Automation Frameworks', 'CI/CD', 'Python']
 ];
 
@@ -48,6 +48,12 @@ const QUESTIONS_BANK = {
     { question: 'Design a rate limiter middleware for a high-traffic REST API.', category: 'System Design', difficulty: 'hard' },
     { question: 'Compare SQL indexing vs MongoDB indexing strategies.', category: 'Database', difficulty: 'medium' },
     { question: 'Explain JWT authentication flow and security best practices for token refresh.', category: 'Security', difficulty: 'medium' }
+  ],
+  'Database': [
+    { question: 'How do you design a normalised relational schema using Primary Keys (PK), Foreign Keys (FK), and referential integrity constraints?', category: 'Relational Schema Design', difficulty: 'medium', rationale: 'Evaluates RDBMS database normalization, primary/foreign key modeling, and CASCADE constraints.' },
+    { question: 'Explain the technical differences between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN with practical SQL query examples.', category: 'SQL JOINs', difficulty: 'medium', rationale: 'Tests candidate query composition, set operations, and relational data retrieval.' },
+    { question: 'How do multi-table SQL JOINs impact query performance on large-scale datasets, and how do composite indexes optimize JOIN execution plans?', category: 'Database Optimization', difficulty: 'hard', rationale: 'Assesses deep knowledge of query execution planners, B-Tree indexes, and JOIN algorithms like Hash Join and Nested Loops.' },
+    { question: 'Describe how to implement Many-to-Many (N:M) entity relationships using junction tables with composite Primary Keys and Foreign Key relationships.', category: 'Relational Schema Design', difficulty: 'hard', rationale: 'Verifies advanced relational schema modeling and bridge table primary/foreign key constraints.' }
   ],
   'General': [
     { question: 'Tell me about a time you had to handle a critical production bug under time pressure.', category: 'Behavioral', difficulty: 'medium' },
@@ -109,7 +115,8 @@ async function seedDatabase() {
       const targetRole = ROLES[i % ROLES.length];
       const status = statuses[i % statuses.length];
 
-      const techCategory = i % 2 === 0 ? 'Frontend' : 'Backend';
+      const categories = ['Frontend', 'Backend', 'Database'];
+      const techCategory = categories[i % categories.length];
       const sessionQuestions = [
         ...QUESTIONS_BANK[techCategory].map((q, idx) => ({ id: `q_${i}_${idx+1}`, ...q })),
         ...QUESTIONS_BANK['General'].map((q, idx) => ({ id: `q_${i}_gen_${idx+1}`, ...q }))
