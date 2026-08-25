@@ -7,6 +7,8 @@ const KNOWN_SKILLS = [
   'node.js', 'express', 'express.js', 'python', 'django', 'fastapi', 'java', 'spring boot', 'c++',
   'c#', '.net', 'golang', 'ruby', 'rails', 'php', 'laravel', 'mongodb', 'mongoose', 'postgresql',
   'mysql', 'sqlite', 'redis', 'elasticsearch', 'prisma', 'typeorm', 'graphql', 'rest api', 'microservices',
+  'relational schema design', 'pk/fk', 'primary key', 'foreign key', 'sql joins', 'inner join', 'left join',
+  'right join', 'full outer join', 'relational database', 'database normalization',
   // DevOps & Cloud
   'docker', 'kubernetes', 'aws', 'azure', 'gcp', 'ci/cd', 'git', 'github', 'gitlab', 'terraform',
   'linux', 'nginx', 'serverless', 'lambda',
@@ -58,6 +60,15 @@ const formatSkillName = (skill) => {
     'ci/cd': 'CI/CD',
     'rag': 'RAG (Retrieval-Augmented Gen)',
     'llm': 'LLM',
+    'relational schema design': 'Relational Schema Design (PK/FK)',
+    'pk/fk': 'Primary Key & Foreign Key (PK/FK)',
+    'primary key': 'Primary Key (PK)',
+    'foreign key': 'Foreign Key (FK)',
+    'sql joins': 'SQL JOINs (INNER/LEFT/RIGHT)',
+    'inner join': 'SQL Inner JOIN',
+    'left join': 'SQL Left JOIN',
+    'database normalization': 'Database Normalization (1NF-3NF)',
+    'relational database': 'Relational Database (RDBMS)',
   };
   return map[skill.toLowerCase()] || skill.charAt(0).toUpperCase() + skill.slice(1);
 };

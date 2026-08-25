@@ -24,45 +24,45 @@ const generateMockQuestions = (targetRole, skillAnalysis) => {
     },
     {
       id: 'q3',
+      question: 'How do you design a normalised relational database schema using Primary Keys (PK), Foreign Keys (FK), and referential integrity constraints (e.g. ON DELETE CASCADE)?',
+      category: 'Relational Schema Design (PK/FK)',
+      difficulty: 'medium',
+      rationale: 'Evaluates relational data modeling, table relationships, and data integrity constraints.',
+    },
+    {
+      id: 'q4',
+      question: 'Explain the technical differences between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN. How do you optimize multi-table JOIN query execution using indexes?',
+      category: 'SQL JOINs & Optimization',
+      difficulty: 'hard',
+      rationale: 'Assesses candidate proficiency in relational query mechanics and database performance tuning.',
+    },
+    {
+      id: 'q5',
       question: `The job description emphasizes expertise in ${gaps.split(',')[0] || 'System Design'}. What experience or transferable skills do you bring to quickly master this area?`,
       category: 'Skill Gap & Adaptability',
       difficulty: 'medium',
       rationale: 'Tests candidate self-awareness and learning agility regarding missing skills.',
     },
     {
-      id: 'q4',
+      id: 'q6',
       question: 'How do you handle rate limiting, error handling, and security validation in REST APIs or server communications?',
       category: 'System Design & Security',
       difficulty: 'hard',
       rationale: 'Verifies backend architecture standards and defensive programming.',
     },
     {
-      id: 'q5',
+      id: 'q7',
       question: 'Describe a situation where a critical production bug occurred. How did you triage, debug, and resolve the issue under pressure?',
       category: 'Problem Solving & Resilience',
       difficulty: 'medium',
       rationale: 'Evaluates crisis management and debugging methodology.',
     },
     {
-      id: 'q6',
-      question: 'How do you ensure smooth state management and responsive user experience when streaming real-time data in frontend applications?',
-      category: 'Frontend & Architecture',
-      difficulty: 'medium',
-      rationale: 'Evaluates client-side streaming and UX optimization.',
-    },
-    {
-      id: 'q7',
+      id: 'q8',
       question: 'Tell me about a time you had a technical disagreement with a teammate or product owner. How did you arrive at an optimal compromise?',
       category: 'Behavioral & Teamwork',
       difficulty: 'easy',
       rationale: 'Tests interpersonal communication and conflict resolution.',
-    },
-    {
-      id: 'q8',
-      question: 'What automated testing frameworks do you prefer for unit and integration testing, and how do you maintain high test coverage in fast-moving projects?',
-      category: 'Quality & Testing',
-      difficulty: 'medium',
-      rationale: 'Ensures commitment to software reliability and code quality.',
     }
   ];
 };
