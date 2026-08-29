@@ -45,7 +45,7 @@ graph TD
 
 ### 2.3 RAG & AI Processing Engine (`/server/src/utils`)
 - `pdfParser.js`: Extracts raw textual content from uploaded PDF resumes using `pdf-parse`.
-- `ragSkillsExtractor.js`: Extracts technical skills, computes TF-IDF representations, and calculates cosine similarity against job descriptions to identify skill gaps.
+- `ragSkillsExtractor.js`: Extracts technical skills (including JS Core: Event Loop, Hoisting; Database: Relational Schema PK/FK, SQL JOINs; AI Architecture: LLM Eval Sets, RAG Vector Retrieval, Multi-Step Agents), computes TF-IDF representations, and calculates cosine similarity against job descriptions to identify skill gaps.
 - `aiService.js`: Multi-provider engine (OpenAI, Anthropic Claude, Google Gemini, Smart Mock) handling question generation, SSE streaming responses, and final interview evaluations.
 
 ### 2.4 Data Persistence Layer (`/server/src/config/db.js`)

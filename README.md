@@ -13,13 +13,13 @@ PrepMate is a full-stack MERN application engineered to empower job seekers with
 
 2. **Resume & Job Description Intake**
    - PDF file upload using Multer with `pdf-parse` text extraction.
-   - Comprehensive technical skill taxonomy extraction (including Relational Schema Design PK/FK, SQL JOINs, System Design, Modern Web Stacks).
+   - Comprehensive technical skill taxonomy extraction (including JS Event Loop, Hoisting, Relational Schema Design PK/FK, SQL JOINs, LLM Eval Sets, RAG Vector Retrieval, Multi-Step Agents, System Design).
    - Job description parsing.
 
 3. **RAG-Lite AI Question Generation**
    - Compares resume text with job description text using TF-IDF and Cosine Similarity.
    - Identifies overlapping skills and missing skill gaps.
-   - Generates tailored interview questions covering Frontend, Backend, Database (Relational Schema Design with PK/FK, SQL JOINs), System Design, and Behavioral categories.
+   - Generates tailored interview questions covering JS Core (Event Loop, Hoisting), Backend, Database (Relational Schema PK/FK, SQL JOINs), AI Architecture (LLM Evals, RAG Vector Retrieval, Multi-Step Agents), System Design, and Behavioral categories.
 
 4. **Multi-Step Live SSE Streaming Mock Interview**
    - Interactive conversational chat interface.

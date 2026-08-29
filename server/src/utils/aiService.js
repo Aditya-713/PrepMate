@@ -6,8 +6,12 @@ const env = require('../config/env');
 const generateMockQuestions = (targetRole, skillAnalysis) => {
   const overlaps = skillAnalysis.overlappingSkills.join(', ') || 'Core Engineering Skills';
   const gaps = skillAnalysis.missingSkills.join(', ') || 'Advanced Architecture';
+  const allSkillsSet = new Set([
+    ...(skillAnalysis.overlappingSkills || []).map(s => s.toLowerCase()),
+    ...(skillAnalysis.missingSkills || []).map(s => s.toLowerCase())
+  ]);
 
-  return [
+  const questions = [
     {
       id: 'q1',
       question: `Can you walk me through your background as a ${targetRole} and describe a key technical project where you utilized ${overlaps.split(',')[0] || 'modern web technologies'}?`,
@@ -21,7 +25,31 @@ const generateMockQuestions = (targetRole, skillAnalysis) => {
       category: 'Technical Depth',
       difficulty: 'medium',
       rationale: 'Evaluates direct alignment with key requested job skills.',
-    },
+    }
+  ];
+
+  // Dynamically inject JS Core or AI Architecture targeted questions if skills present
+  if (Array.from(allSkillsSet).some(s => s.includes('event loop') || s.includes('hoisting'))) {
+    questions.push({
+      id: 'q_js_core',
+      question: 'Explain how the JavaScript Event Loop handles asynchronous I/O, microtasks (Promises), and macrotasks (timers), and contrast hoisting behavior between var and let/const.',
+      category: 'JavaScript Core Architecture',
+      difficulty: 'medium',
+      rationale: 'Evaluates core JavaScript runtime mechanics, asynchronous execution order, and scope hoisting.'
+    });
+  }
+
+  if (Array.from(allSkillsSet).some(s => s.includes('eval') || s.includes('vector') || s.includes('agent') || s.includes('embeddings'))) {
+    questions.push({
+      id: 'q_ai_arch',
+      question: 'Compare dense vector retrieval vs sparse search in RAG systems, explain how LLM eval sets prevent regression, and describe multi-step agentic execution loops.',
+      category: 'Advanced AI Architecture & RAG',
+      difficulty: 'hard',
+      rationale: 'Verifies knowledge of modern LLM systems, embedding indices, automated evals, and agent tool calling.'
+    });
+  }
+
+  questions.push(
     {
       id: 'q3',
       question: 'How do you design a normalised relational database schema using Primary Keys (PK), Foreign Keys (FK), and referential integrity constraints (e.g. ON DELETE CASCADE)?',
@@ -64,7 +92,9 @@ const generateMockQuestions = (targetRole, skillAnalysis) => {
       difficulty: 'easy',
       rationale: 'Tests interpersonal communication and conflict resolution.',
     }
-  ];
+  );
+
+  return questions;
 };
 
 /**
