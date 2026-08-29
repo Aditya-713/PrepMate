@@ -3,6 +3,7 @@ const KNOWN_SKILLS = [
   // Frontend
   'javascript', 'typescript', 'react', 'react.js', 'next.js', 'vue', 'angular', 'html', 'css',
   'tailwind', 'bootstrap', 'redux', 'zustand', 'webpack', 'vite', 'sass', 'responsive design',
+  'event loop', 'hoisting',
   // Backend & Databases
   'node.js', 'express', 'express.js', 'python', 'django', 'fastapi', 'java', 'spring boot', 'c++',
   'c#', '.net', 'golang', 'ruby', 'rails', 'php', 'laravel', 'mongodb', 'mongoose', 'postgresql',
@@ -17,6 +18,8 @@ const KNOWN_SKILLS = [
   // AI / ML / Data
   'python', 'pandas', 'numpy', 'scikit-learn', 'tensorflow', 'pytorch', 'openai', 'anthropic',
   'langchain', 'rag', 'llm', 'embeddings', 'vector database', 'pinecone', 'chromadb',
+  'llm eval sets', 'llm eval', 'eval sets', 'embeddings & vector retrieval', 'vector retrieval',
+  'multi-step agent', 'agentic workflows', 'multi-step agents',
   // Core Engineering & Soft Skills
   'data structures', 'algorithms', 'system design', 'object oriented programming', 'agile', 'scrum',
   'problem solving', 'team leadership', 'code review', 'communication'
@@ -60,6 +63,17 @@ const formatSkillName = (skill) => {
     'ci/cd': 'CI/CD',
     'rag': 'RAG (Retrieval-Augmented Gen)',
     'llm': 'LLM',
+    'event loop': 'JavaScript Event Loop',
+    'hoisting': 'JavaScript Hoisting',
+    'llm eval sets': 'LLM Eval Sets & Benchmarks',
+    'llm eval': 'LLM Eval Sets & Benchmarks',
+    'eval sets': 'LLM Eval Sets & Benchmarks',
+    'embeddings & vector retrieval': 'RAG — Embeddings & Vector Retrieval',
+    'vector retrieval': 'RAG — Vector Retrieval',
+    'embeddings': 'RAG — Text Embeddings',
+    'multi-step agent': 'Multi-Step Agentic Workflows',
+    'agentic workflows': 'Multi-Step Agentic Workflows',
+    'multi-step agents': 'Multi-Step Agentic Workflows',
     'relational schema design': 'Relational Schema Design (PK/FK)',
     'pk/fk': 'Primary Key & Foreign Key (PK/FK)',
     'primary key': 'Primary Key (PK)',

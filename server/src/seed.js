@@ -17,11 +17,11 @@ const ROLES = [
 ];
 
 const SKILL_SETS = [
-  ['JavaScript', 'TypeScript', 'React', 'Redux', 'HTML5', 'CSS3', 'Tailwind', 'Webpack', 'Jest'],
+  ['JavaScript', 'TypeScript', 'React', 'JavaScript Event Loop', 'JavaScript Hoisting', 'HTML5', 'CSS3', 'Tailwind', 'Webpack', 'Jest'],
   ['Node.js', 'Express', 'Relational Schema Design (PK/FK)', 'SQL JOINs', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'REST APIs'],
   ['React', 'Node.js', 'Python', 'PostgreSQL', 'SQL JOINs', 'Docker', 'AWS', 'System Design', 'Git', 'CI/CD'],
   ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'CI/CD', 'Linux', 'Bash', 'Prometheus', 'Grafana'],
-  ['Python', 'PyTorch', 'TensorFlow', 'Scikit-Learn', 'FastAPI', 'NLP', 'Vector DBs', 'LLMs', 'Pandas'],
+  ['Python', 'PyTorch', 'TensorFlow', 'LLM Eval Sets & Benchmarks', 'RAG — Embeddings & Vector Retrieval', 'Multi-Step Agentic Workflows', 'Vector DBs', 'LLMs', 'Pandas'],
   ['React Native', 'Flutter', 'Dart', 'iOS/Android', 'Redux', 'Mobile UI', 'GraphQL', 'Firebase'],
   ['Distributed Systems', 'System Design', 'Relational Schema Design (PK/FK)', 'SQL JOINs', 'Kafka', 'Kubernetes', 'Microservices'],
   ['Selenium', 'Cypress', 'Playwright', 'Jest', 'Postman', 'Automation Frameworks', 'CI/CD', 'Python']
@@ -38,6 +38,8 @@ const SAMPLE_USERS = [
 
 const QUESTIONS_BANK = {
   'Frontend': [
+    { question: 'Explain the JavaScript Event Loop, execution stack, microtask queue (Promises), and macrotask queue (setTimeout) with code execution order.', category: 'JavaScript Event Loop', difficulty: 'medium', rationale: 'Tests deep understanding of single-threaded non-blocking asynchronous execution in JavaScript.' },
+    { question: 'How does hoisting work in JavaScript for var, let, const, function declarations, and function expressions? What is the Temporal Dead Zone (TDZ)?', category: 'JavaScript Hoisting', difficulty: 'medium', rationale: 'Evaluates knowledge of scope, variable initialization lifecycle, and hoisting nuances.' },
     { question: 'Explain the difference between Virtual DOM and Shadow DOM.', category: 'Technical', difficulty: 'medium' },
     { question: 'How do you optimize React performance for large data lists?', category: 'Performance', difficulty: 'hard' },
     { question: 'Describe how closures work in JavaScript with a practical use case.', category: 'Technical', difficulty: 'easy' },
@@ -54,6 +56,11 @@ const QUESTIONS_BANK = {
     { question: 'Explain the technical differences between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN with practical SQL query examples.', category: 'SQL JOINs', difficulty: 'medium', rationale: 'Tests candidate query composition, set operations, and relational data retrieval.' },
     { question: 'How do multi-table SQL JOINs impact query performance on large-scale datasets, and how do composite indexes optimize JOIN execution plans?', category: 'Database Optimization', difficulty: 'hard', rationale: 'Assesses deep knowledge of query execution planners, B-Tree indexes, and JOIN algorithms like Hash Join and Nested Loops.' },
     { question: 'Describe how to implement Many-to-Many (N:M) entity relationships using junction tables with composite Primary Keys and Foreign Key relationships.', category: 'Relational Schema Design', difficulty: 'hard', rationale: 'Verifies advanced relational schema modeling and bridge table primary/foreign key constraints.' }
+  ],
+  'AI & LLM Architecture': [
+    { question: 'How do you design an LLM evaluation set and benchmark suite (e.g., LLM-as-a-Judge, ROUGE/BLEU, semantic similarity metrics) to detect regression during prompt engineering or fine-tuning?', category: 'LLM Eval Sets & Benchmarks', difficulty: 'hard', rationale: 'Evaluates production LLM pipeline quality assessment, automated grading benchmarks, and hallucination measurement.' },
+    { question: 'Compare dense vector embeddings (e.g., OpenAI text-embedding-3, BERT) vs sparse retrieval (BM25) in RAG systems, and explain how HNSW vector indexes optimize similarity search.', category: 'RAG — Embeddings & Vector Retrieval', difficulty: 'hard', rationale: 'Assesses architectural knowledge of vector databases, embedding generation, chunking strategies, and hybrid search.' },
+    { question: 'Describe how to build a multi-step autonomous AI agent using the ReAct (Reason + Act) pattern, tool execution loops, state management, and loop termination conditions.', category: 'Multi-Step Agentic Workflows', difficulty: 'hard', rationale: 'Tests understanding of autonomous LLM agent execution loops, function calling, stateful memory, and guardrails against infinite loops.' }
   ],
   'General': [
     { question: 'Tell me about a time you had to handle a critical production bug under time pressure.', category: 'Behavioral', difficulty: 'medium' },

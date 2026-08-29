@@ -55,6 +55,45 @@ describe('Interview Question Generation API', () => {
     expect(questions.some(q => q.category.includes('Relational Schema') || q.category.includes('SQL JOINs'))).toBe(true);
   });
 
+  it('should extract JavaScript Event Loop and Hoisting skills and generate JS core questions', async () => {
+    const payload = {
+      jobDescription: 'Looking for a Frontend Specialist knowledgeable in JavaScript Event Loop mechanics, microtasks, macrotasks, scoping, and JavaScript Hoisting behaviors.',
+      resumeText: 'Frontend Engineer skilled in JavaScript, React, Event Loop performance optimization, and scope hoisting.',
+      targetRole: 'Frontend Specialist',
+    };
+
+    const res = await request(app)
+      .post('/api/interviews/generate-questions')
+      .set('Authorization', `Bearer ${authToken}`)
+      .send(payload);
+
+    expect(res.statusCode).toEqual(201);
+    expect(res.body.success).toBe(true);
+    const skills = res.body.session.skillAnalysis.jdSkills;
+    expect(skills.some(s => s.toLowerCase().includes('event loop'))).toBe(true);
+    expect(skills.some(s => s.toLowerCase().includes('hoisting'))).toBe(true);
+  });
+
+  it('should extract LLM Eval Sets, Vector Retrieval, and Multi-Step Agent skills and generate AI architecture questions', async () => {
+    const payload = {
+      jobDescription: 'Seeking Senior AI Engineer with expertise in LLM eval sets, benchmarks, RAG embeddings & vector retrieval, and multi-step agent autonomous workflows.',
+      resumeText: 'AI Specialist experienced in LangChain, Python, LLM eval, embeddings & vector retrieval, and multi-step agentic workflows.',
+      targetRole: 'AI Engineer',
+    };
+
+    const res = await request(app)
+      .post('/api/interviews/generate-questions')
+      .set('Authorization', `Bearer ${authToken}`)
+      .send(payload);
+
+    expect(res.statusCode).toEqual(201);
+    expect(res.body.success).toBe(true);
+    const skills = res.body.session.skillAnalysis.jdSkills;
+    expect(skills.some(s => s.toLowerCase().includes('eval'))).toBe(true);
+    expect(skills.some(s => s.toLowerCase().includes('vector retrieval') || s.toLowerCase().includes('embeddings'))).toBe(true);
+    expect(skills.some(s => s.toLowerCase().includes('agent'))).toBe(true);
+  });
+
   it('should reject question generation when job description is too short', async () => {
     const res = await request(app)
       .post('/api/interviews/generate-questions')
