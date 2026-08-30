@@ -210,8 +210,15 @@ const evaluateFullInterview = async ({ transcript, questions, jobDescription, ta
   };
 };
 
+const { TOOL_DEFINITIONS, executeToolCall } = require('./functionCallingEngine');
+const { MultiStepInterviewAgent } = require('./multiStepAgent');
+
 module.exports = {
   generateInterviewQuestions,
   streamInterviewFollowup,
   evaluateFullInterview,
+  TOOL_DEFINITIONS,
+  executeToolCall,
+  MultiStepInterviewAgent,
 };
+

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "eval_001",
+    "name": "Frontend & JS Core Viva Benchmark",
+    "role": "Frontend Developer",
+    "resumeText": "Experienced frontend engineer skilled in JavaScript, React, Event Loop microtasks, and hoisting mechanics.",
+    "jobDescription": "Looking for a JS specialist proficient in JavaScript Event Loop, async/await, and hoisted functions.",
+    "expectedTopics": ["JavaScript Event Loop", "JavaScript Hoisting"],
+    "expectedMinQuestions": 4,
+    "requiredSchemaKeys": ["id", "question", "category", "difficulty", "rationale"]
+  },
+  {
+    "id": "eval_002",
+    "name": "Backend & Database Schema Viva Benchmark",
+    "role": "Backend Engineer",
+    "resumeText": "Backend developer with Node.js, Express, MongoDB, and SQL databases experience.",
+    "jobDescription": "Need a backend engineer who designs relational schema design with PK/FK, SQL JOINs (INNER/LEFT/RIGHT), and index optimization.",
+    "expectedTopics": ["Relational Schema Design (PK/FK)", "SQL JOINs & Optimization"],
+    "expectedMinQuestions": 4,
+    "requiredSchemaKeys": ["id", "question", "category", "difficulty", "rationale"]
+  },
+  {
+    "id": "eval_003",
+    "name": "AI Systems & RAG Agent Viva Benchmark",
+    "role": "AI Solutions Architect",
+    "resumeText": "AI practitioner experienced in LLMs, prompt engineering, and basic search.",
+    "jobDescription": "Architect to build modern AI platforms with Function calling/tool use, RAG embeddings & vector retrieval, LLM eval sets, and multi-step agents.",
+    "expectedTopics": ["Function Calling / Tool Use", "RAG — Embeddings & Vector Retrieval", "LLM Eval Sets & Benchmarks", "Multi-Step Agentic Workflows"],
+    "expectedMinQuestions": 4,
+    "requiredSchemaKeys": ["id", "question", "category", "difficulty", "rationale"]
+  }
+]
