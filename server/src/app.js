@@ -9,6 +9,7 @@ const authRoutes = require('./routes/auth.routes');
 const resumeRoutes = require('./routes/resume.routes');
 const interviewRoutes = require('./routes/interview.routes');
 const adminRoutes = require('./routes/admin.routes');
+const agentRoutes = require('./routes/agentRoutes');
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/resumes', resumeRoutes);
 app.use('/api/interviews', interviewRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/agent', agentRoutes);
 
 // Centralized Error Handling Middleware
 app.use(errorHandler);

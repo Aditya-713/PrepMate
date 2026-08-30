@@ -167,8 +167,12 @@ const performRagSkillAnalysis = (resumeText, jobDescriptionText) => {
   };
 };
 
+const { performVectorRagRetrieval } = require('./vectorRagEngine');
+
 module.exports = {
   extractSkills,
   performRagSkillAnalysis,
   computeCosineSimilarity,
+  performVectorRagRetrieval,
 };
+
